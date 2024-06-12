@@ -1,0 +1,402 @@
+[
+  {
+    "id": 1,
+    "name": "Souris Logitec",
+    "desc": "Souris ergonomique pour gamer",
+    "price": 29.99,
+    "category": 1,
+    "brand": 1
+  },
+  {
+    "id": 2,
+    "name": "Téléviseur LED Samsung",
+    "desc": "Téléviseur 4K avec Wi-Fi",
+    "price": 499.99,
+    "category": 2,
+    "brand": 2
+  },
+  {
+    "id": 3,
+    "name": "Enceinte Sonos",
+    "desc": "Enceinte sans fil pour musique en haute qualité",
+    "price": 199.99,
+    "category": 3,
+    "brand": 3
+  },
+  {
+    "id": 4,
+    "name": "Montre Samsung",
+    "desc": "Montre intelligente avec GPS",
+    "price": 199.99,
+    "category": 4,
+    "brand": 1
+  },
+  {
+    "id": 5,
+    "name": "Meuble de rangement",
+    "desc": "Meuble de rangement pour ordinateur",
+    "price": 49.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 6,
+    "name": "Boucle d'oreille",
+    "desc": "Boucle d'oreille avec pierres précieuses",
+    "price": 99.99,
+    "category": 1,
+    "brand": 5
+  },
+  {
+    "id": 7,
+    "name": "Hotte à repasser Samsung",
+    "desc": "Hotte à repasser avec steam",
+    "price": 129.99,
+    "category": 2,
+    "brand": 2
+  },
+  {
+    "id": 8,
+    "name": "Câble HDMI",
+    "desc": "Câble HDMI pour connexion vidéo",
+    "price": 9.99,
+    "category": 3,
+    "brand": 4
+  },
+  {
+    "id": 9,
+    "name": "Souris ergonomique",
+    "desc": "Souris ergonomique pour travail",
+    "price": 39.99,
+    "category": 1,
+    "brand": 4
+  },
+  {
+    "id": 10,
+    "name": "Jeux de cartes",
+    "desc": "Pack de cartes à jouer",
+    "price": 19.99,
+    "category": 4,
+    "brand": 4
+  },
+  {
+    "id": 11,
+    "name": "Micro pour gaming",
+    "desc": "Micro pour gamer avec réduction de bruit",
+    "price": 49.99,
+    "category": 1,
+    "brand": 2
+  },
+  {
+    "id": 12,
+    "name": "Tablet Samsung",
+    "desc": "Tablet Android avec écran tactile",
+    "price": 299.99,
+    "category": 2,
+    "brand": 2
+  },
+  {
+    "id": 13,
+    "name": "Enceinte Bluetooth",
+    "desc": "Enceinte sans fil pour musique",
+    "price": 99.99,
+    "category": 3,
+    "brand": 4
+  },
+  {
+    "id": 14,
+    "name": "Cadeau-écriture",
+    "desc": "Crayons de qualité pour enfant ou adulte",
+    "price": 9.99,
+    "category": 5,
+    "brand": 5
+  },
+  {
+    "id": 15,
+    "name": "Pince-épingle",
+    "desc": "Pince-épingle en métal inoxydable",
+    "price": 5.99,
+    "category": 4,
+    "brand": 4
+  },
+  {
+    "id": 16,
+    "name": "Tinted car windows",
+    "desc": "Tinted car windows pour voiture",
+    "price": 49.99,
+    "category": 5,
+    "brand": 2
+  },
+  {
+    "id": 17,
+    "name": "Microphon smartphone",
+    "desc": "Microphon pour enregistrement audio",
+    "price": 29.99,
+    "category": 1,
+    "brand": 1
+  },
+  {
+    "id": 18,
+    "name": "Portable speaker",
+    "desc": "Portable speaker for music",
+    "price": 99.99,
+    "category": 3,
+    "brand": 3
+  },
+  {
+    "id": 19,
+    "name": "Smartwatch",
+    "desc": "Smartwatch for fitness and health tracking",
+    "price": 129.99,
+    "category": 4,
+    "brand": 1
+  },
+  {
+    "id": 20,
+    "name": "Table lamp",
+    "desc": "Table lamp for lighting",
+    "price": 29.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 21,
+    "name": "Wireless earbuds",
+    "desc": "Wireless earbuds for music",
+    "price": 49.99,
+    "category": 1,
+    "brand": 2
+  },
+  {
+    "id": 22,
+    "name": "Smart TV",
+    "desc": "Smart TV with internet connection",
+    "price": 399.99,
+    "category": 2,
+    "brand": 2
+  },
+  {
+    "id": 23,
+    "name": "USB flash drive",
+    "desc": "USB flash drive for data storage",
+    "price": 19.99,
+    "category": 4,
+    "brand": 4
+  },
+  {
+    "id": 24,
+    "name": "Desk lamp",
+    "desc": "Desk lamp for office use",
+    "price": 39.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 25,
+    "name": "Wireless keyboard",
+    "desc": "Wireless keyboard for computer",
+    "price": 29.99,
+    "category": 1,
+    "brand": 1
+  },
+  {
+    "id": 26,
+    "name": "Fitness tracker",
+    "desc": "Fitness tracker for health and fitness",
+    "price": 99.99,
+    "category": 4,
+    "brand": 1
+  },
+  {
+    "id": 27,
+    "name": "Wireless charging pad",
+    "desc": "Wireless charging pad for devices",
+    "price": 29.99,
+    "category": 1,
+    "brand": 2
+  },
+  {
+    "id": 28,
+    "name": "Panasonic camera",
+    "desc": "Panasonic camera for photography",
+    "price": 199.99,
+    "category": 4,
+    "brand": 5
+  },
+  {
+    "id": 29,
+    "name": "Power bank",
+    "desc": "Power bank for mobile devices",
+    "price": 39.99,
+    "category": 1,
+    "brand": 1
+  },
+  {
+    "id": 30,
+    "name": "Cable organizer",
+    "desc": "Cable organizer for computer",
+    "price": 9.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 31,
+    "name": "Noise-cancelling headphones",
+    "desc": "Noise-cancelling headphones for music",
+    "price": 149.99,
+    "category": 1,
+    "brand": 3
+  },
+  {
+    "id": 32,
+    "name": "Portable Wi-Fi router",
+    "desc": "Portable Wi-Fi router for internet",
+    "price": 99.99,
+    "category": 3,
+    "brand": 2
+  },
+  {
+    "id": 33,
+    "name": "Bluetooth speaker",
+    "desc": "Bluetooth speaker for music",
+    "price": 99.99,
+    "category": 3,
+    "brand": 3
+  },
+  {
+    "id": 34,
+    "name": "Smart thermostat",
+    "desc": "Smart thermostat for home temperature control",
+    "price": 149.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 35,
+    "name": "Smart coffee maker",
+    "desc": "Smart coffee maker for coffee lovers",
+    "price": 99.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 36,
+    "name": "Wireless mouse",
+    "desc": "Wireless mouse for computer",
+    "price": 29.99,
+    "category": 1,
+    "brand": 1
+  },
+  {
+    "id": 37,
+    "name": "Portable projector",
+    "desc": "Portable projector for presentations",
+    "price": 199.99,
+    "category": 3,
+    "brand": 2
+  },
+  {
+    "id": 38,
+    "name": "Smart plug",
+    "desc": "Smart plug for home automation",
+    "price": 29.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 39,
+    "name": "Wireless printer",
+    "desc": "Wireless printer for printing documents",
+    "price": 99.99,
+    "category": 1,
+    "brand": 2
+  },
+  {
+    "id": 40,
+    "name": "Smart speaker",
+    "desc": "Smart speaker for music and smart home control",
+    "price": 149.99,
+    "category": 3,
+    "brand": 3
+  },
+  {
+    "id": 41,
+    "name": "Desk organizer",
+    "desc": "Desk organizer for office use",
+    "price": 19.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 42,
+    "name": "Wireless doorbell",
+    "desc": "Wireless doorbell for home security",
+    "price": 49.99,
+    "category": 5,
+    "brand": 2
+  },
+  {
+    "id": 43,
+    "name": "Smart thermostat",
+    "desc": "Smart thermostat for home temperature control",
+    "price": 149.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 44,
+    "name": "Wireless security camera",
+    "desc": "Wireless security camera for home surveillance",
+    "price": 99.99,
+    "category": 5,
+    "brand": 2
+  },
+  {
+    "id": 45,
+    "name": "Smart coffee maker",
+    "desc": "Smart coffee maker for coffee lovers",
+    "price": 99.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 46,
+    "name": "Wireless earbuds",
+    "desc": "Wireless earbuds for music",
+    "price": 49.99,
+    "category": 1,
+    "brand": 2
+  },
+  {
+    "id": 47,
+    "name": "Portable power bank",
+    "desc": "Portable power bank for mobile devices",
+    "price": 29.99,
+    "category": 1,
+    "brand": 1
+  },
+  {
+    "id": 48,
+    "name": "Smart light bulb",
+    "desc": "Smart light bulb for home lighting",
+    "price": 19.99,
+    "category": 5,
+    "brand": 4
+  },
+  {
+    "id": 49,
+    "name": "Wireless keyboard",
+    "desc": "Wireless keyboard for computer",
+    "price": 39.99,
+    "category": 1,
+    "brand": 1
+  },
+  {
+    "id": 50,
+    "name": "Smartwatch",
+    "desc": "Smartwatch for fitness and health tracking",
+    "price": 129.99,
+    "category": 4,
+    "brand": 1
+  }
+]

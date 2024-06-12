@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Téléphonie",
+    "desc": "Téléphones et accessoires"
+  },
+  {
+    "id": 2,
+    "name": "Audio",
+    "desc": "Enceintes, casques et haut-parleurs"
+  },
+  {
+    "id": 3,
+    "name": "Electronique",
+    "desc": "Périphériques pour ordinateur et vidéo"
+  },
+  {
+    "id": 4,
+    "name": "photographie",
+    "desc": "Appareils photo et accessoires"
+  },
+  {
+    "id": 5,
+    "name": "Accessoires",
+    "desc": "Autres accessoires pour votre daily life"
+  }
+]
