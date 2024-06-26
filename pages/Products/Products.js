@@ -85,11 +85,10 @@ export const Products = (element) => {
   // Ajout d'un écouteur d'événement sur les boutons ajouter au panier
   productsList.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", (event) => {
-      // prevent parent a tag event to be triggered
+      // on empêche le comportement par défaut du bouton
       event.preventDefault();
-      console.dir(event.target.dataset.product);
       AddToCart(event.target.dataset.product);
-      console.log("Ajouter au panier");
+      console.log("Ajouté au panier");
     });
   });
 
