@@ -1,5 +1,6 @@
 import products from "../data/products.json";
 import { Cart } from "../components/Cart";
+import { showToast } from "../utils/Toast";
 
 // Ajoute un produit au panier
 export const AddToCart = (id) => {
@@ -15,6 +16,7 @@ export const AddToCart = (id) => {
 
   localStorage.setItem("cart", JSON.stringify(cart));
   Cart(cart);
+  showToast("Produit ajouté au panier");
 };
 
 // Met à jour un produit du panier
@@ -27,8 +29,6 @@ export const UpdateCart = (id, action) => {
   } else if (action === "decrease") {
     if (item.quantity > 1) {
       item.quantity--;
-    } else {
-      cart.splice(cart.indexOf(item), 1);
     }
   }
 
