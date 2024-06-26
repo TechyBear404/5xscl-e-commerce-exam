@@ -1,10 +1,17 @@
 import { CartItemTemplate } from "./CartItemTemplate.js";
-import { UpdateCart } from "../utils/Cart.js";
+import {
+  UpdateCart,
+  DeleteProduct,
+  EmptyCart,
+  UpdateCartBadge,
+} from "../utils/Cart.js";
 
 export const Cart = () => {
   const cartElem = document.querySelector("#cart");
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   let totalPrice = 0;
+
+  UpdateCartBadge(cart);
 
   const id = `cart-${Math.random().toString(36).slice(2)}`;
 
@@ -63,16 +70,12 @@ export const Cart = () => {
 
   // On vide le panier
   cleanCartButton.addEventListener("click", () => {
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
+    EmptyCart();
   });
 
   // On valide le panier
   validateCartButton.addEventListener("click", () => {
-    cart = [];
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart();
+    EmptyCart();
   });
 
   // On ajoute les écouteurs d'événements pour les boutons d'ajout de quantité
@@ -98,13 +101,7 @@ export const Cart = () => {
   // On ajoute les écouteurs d'événements pour les boutons de suppression d'item
   listElement.addEventListener("click", (event) => {
     if (event.target.classList.contains("delete-item")) {
-      const index = cart.findIndex(
-        (item) => item.id === event.target.dataset.itemId
-      );
-
-      cart.splice(index, 1);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      updateCart();
+      DeleteProduct(event.target.dataset.itemId);
     }
   });
 };

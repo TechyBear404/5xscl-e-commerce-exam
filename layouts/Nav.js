@@ -41,8 +41,18 @@ export const Nav = (element) => {
               .join("")}
           </ul>
           <span class="navbar-text">
-            <button id="cart-btn" class="btn btn-primary position-relative">Panier</button>
+            <button id="cart-btn" type="button" class="btn btn-primary position-relative">
+              <i class="bi bi-basket2-fill"></i>
+              <span id="cart-content-qty" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+              </span>
+            </button>
             <div id="cart" class="d-none position-absolute z-3 rounded-3 end-0 mt-2 me-3"></div>
+            <!-- <button id="cart-btn" class="btn btn-primary position-relative"><i class="bi bi-basket2-fill"></i></button>
+            <div>
+              <p id="cart-content-qty">0</p>
+              <div id="cart" class="d-none position-absolute z-3 rounded-3 end-0 mt-2 me-3"></div>
+            </div> -->
           </span>
         </div>
       </div>

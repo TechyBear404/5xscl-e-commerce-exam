@@ -82,16 +82,6 @@ export const Products = (element) => {
     }
   });
 
-  // // Ajout d'un écouteur d'événement sur les boutons ajouter au panier
-  // productsList.querySelectorAll(".add-to-cart").forEach((button) => {
-  //   button.addEventListener("click", (event) => {
-  //     // on empêche le comportement par défaut du bouton
-  //     event.preventDefault();
-  //     AddToCart(event.target.dataset.product);
-  //     console.log("Ajouté au panier");
-  //   });
-  // });
-
   // Ajout d'un écouteur d'événement sur le bouton de retour arrière du navigateur
   window.addEventListener("popstate", () => {
     const url = new URL(window.location.href);
