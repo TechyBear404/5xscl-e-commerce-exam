@@ -80,7 +80,9 @@ export const CardsList = (element, items, itemTemplate, searchableFields) => {
 
     // On met à jour le contenu de la liste et de la pagination
     listElement.innerHTML = renderList(filteredItems);
-    paginationElement.innerHTML = Pagination(currentPage, pages);
+    if (pages > 1) {
+      paginationElement.innerHTML = Pagination(currentPage, pages);
+    }
 
     const paginationLinks = paginationElement.querySelectorAll("a");
     // On ajoute un écouteur d'événement sur chaque lien de pagination

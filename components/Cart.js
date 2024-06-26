@@ -37,7 +37,11 @@ export const Cart = () => {
         <tbody>
         </tbody>
       </table>
-      ${cart.length === 0 ? "<p class='p-2'>Le panier est vide</p>" : ""}
+      ${
+        cart.length === 0
+          ? "<p class='p-2 text-center'>Le panier est vide</p>"
+          : ""
+      }
       <div class="d-flex justify-content-end pe-2">
         <h3>Total: <span id="total-price">0</span>€</h3>
       </div>
