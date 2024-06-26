@@ -104,7 +104,13 @@ export const Cart = () => {
 
   // On ajoute les écouteurs d'événements pour les boutons de suppression d'item
   listElement.addEventListener("click", (event) => {
-    if (event.target.classList.contains("delete-item")) {
+    console.log("delete item");
+    console.log(event.target.classList);
+    console.log(event.target.classList.contains("delete-item"));
+    if (
+      event.target.classList.contains("delete-item") ||
+      event.target.parentElement.classList.contains("delete-item")
+    ) {
       DeleteProduct(event.target.dataset.itemId);
     }
   });

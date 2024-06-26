@@ -4,6 +4,12 @@ import { showToast } from "../utils/Toast";
 
 export const UpdateCartBadge = (cart) => {
   const cartContentQty = document.querySelector("#cart-content-qty");
+  // console.log(cart);
+  // if (cart.length === 0) {
+  //   cartContentQty.classList.add("d-none");
+  //   return;
+  // }
+  // cartContentQty.classList.remove("d-none");
   const qty = cart.reduce((acc, item) => acc + item.quantity, 0);
   cartContentQty.textContent = qty;
 };
@@ -46,6 +52,7 @@ export const UpdateCart = (id, action) => {
 };
 
 export const DeleteProduct = (id) => {
+  console.log("delete product");
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const index = cart.findIndex((item) => item.id === id);
 

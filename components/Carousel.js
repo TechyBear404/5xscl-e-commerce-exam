@@ -15,7 +15,7 @@ import { Carousel as BootstrapCarousel } from "bootstrap";
  */
 export const Carousel = (images) => {
   return `
-    <div id="carousel" class="carousel slide mh-50 w-50 m-auto" data-bs-ride="carousel">
+    <div id="carousel" class="carousel slide w-50 m-auto" data-bs-ride="carousel">
       <div class="carousel-indicators">
         ${images
           .map(
