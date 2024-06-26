@@ -1,4 +1,5 @@
 import { ROUTE_CHANGED_EVENT } from "../framework/app";
+import { Cart } from "../components/Cart";
 
 /**
  * @typedef {Object} Link
@@ -28,7 +29,7 @@ export const Nav = (element) => {
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
           <ul class="navbar-nav">
             ${links
               .map(
@@ -39,6 +40,10 @@ export const Nav = (element) => {
               )
               .join("")}
           </ul>
+          <span class="navbar-text">
+            <button id="cart-btn" class="btn btn-primary position-relative">Panier</button>
+            <div id="cart" class="d-none position-absolute z-3 rounded-3 end-0 mt-2 me-3"></div>
+          </span>
         </div>
       </div>
     </nav>
@@ -99,10 +104,19 @@ export const Nav = (element) => {
     document.title = `${activeLink.textContent} - ${appName}`;
   };
 
+  const cart = element.querySelector("#cart");
   // Initialise la barre de navigation
   markAsActive();
   replaceLinksByEvents();
   changePageTitle();
+  Cart();
+
+  const cartButton = element.querySelector("#cart-btn");
+  cartButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    Cart();
+    cart.classList.toggle("d-none");
+  });
 
   // Ajoute un écouteur d'événement pour gérer les événements de navigation du navigateur (précédent/suivant)
   window.addEventListener("popstate", () => {

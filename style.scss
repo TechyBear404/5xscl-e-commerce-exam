@@ -1,1 +1,5 @@
 @import "bootstrap/scss/bootstrap";
+
+.product-card:hover h2 {
+  text-decoration: underline;
+}

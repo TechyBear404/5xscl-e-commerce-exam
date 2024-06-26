@@ -1,27 +1,20 @@
 [
   {
     "id": 1,
-    "name": "Samsung",
-    "desc": "Fabricant sud-coréen d'électronique"
+    "name": "FancyDress",
+    "desc": "Une marque leader pour des costumes amusants et créatifs.",
+    "img": "https://example.com/images/fancydress.jpg"
   },
   {
     "id": 2,
-    "name": "Logitec",
-    "desc": "Fabricant suisse d'électronique et de logiciels"
+    "name": "CostumeWorld",
+    "desc": "Votre guichet unique pour tous vos besoins en matière de costumes.",
+    "img": "https://example.com/images/costumeworld.jpg"
   },
   {
     "id": 3,
-    "name": "Sonos",
-    "desc": "Fabricant américain d'enregistreurs et de systèmes de audio"
-  },
-  {
-    "id": 4,
-    "name": "Canon",
-    "desc": "Fabricant japonais d'appareils photo et photocopieuses"
-  },
-  {
-    "id": 5,
-    "name": "Sony",
-    "desc": "Fabricant japonais d'électronique et de produits audio"
+    "name": "DisguiseMasters",
+    "desc": "Costumes fabriqués avec expertise pour toutes les occasions.",
+    "img": "https://example.com/images/disguisemasters.jpg"
   }
 ]

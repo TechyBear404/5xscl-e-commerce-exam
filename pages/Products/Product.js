@@ -17,13 +17,14 @@ export const Product = (element) => {
   // si l'utilisateur n'existe pas, on affiche un message d'erreur
   if (!product) {
     element.innerHTML = `
-      <h1>Utilisateur non trouvé</h1>
-      <p>L'utilisateur avec l'identifiant ${productId} n'existe pas.</p>
+      <h1>Produit non trouvé</h1>
+      <p>Le produit avec l'identifiant ${productId} n'existe pas.</p>
       `;
     return;
   }
 
   element.innerHTML = `
+    <img src="${product.img}" alt="${product.name}">
     <h1>${product.name}</h1>
     <p>${product.price}</p>
     `;

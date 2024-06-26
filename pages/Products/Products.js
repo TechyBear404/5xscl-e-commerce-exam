@@ -1,101 +1,103 @@
 import { CardsList } from "../../components/CardsList";
-import { DataTable } from "../../components/DataTable";
 import products from "../../data/products.json";
+import categories from "../../data/categories.json";
 import { ProductCard } from "./Partials/ProductCard";
-import { ProductRow } from "./Partials/ProductRow";
-
+import { CategoriesMenu } from "./Partials/CategoriesMenu";
+import { AddToCart } from "../../utils/Cart";
 /**
- * Page de la liste des utilisateurs
- * 2 modes d'affichage : grille et tableau
+ * Page de la liste des produits
  *
  * @param {HTMLElement} element
  * @returns {void}
  */
 export const Products = (element) => {
-  // on récupère le mode d'affichage depuis l'URL
+  // on récupère la categorie depuis l'URL
   const url = new URL(window.location.href);
-  const modeFromQueryString = url.searchParams.get("mode");
-  let mode = modeFromQueryString || "grid";
+  const categoryFromQueryString = url.searchParams.get("category");
+  let selectedCategory = categoryFromQueryString || "all";
 
   element.innerHTML = `
     <div class="d-flex justify-content-between">
       <h1>Produits</h1>
-      <div>
-        <button id="grid-mode-btn" class="btn btn-sm btn-secondary mr-3">
-          <i class="ri-layout-grid-line"></i>
-        </button>
-        <button id="table-mode-btn" class="btn btn-sm btn-secondary mr-3">
-          <i class="ri-table-line"></i>
-        </button>
-      </div>
     </div>
+    <div id="categories-menu"></div>
     <div id="products-list"></div>
     `;
 
   const productsList = element.querySelector("#products-list");
+  const categoriesMenu = element.querySelector("#categories-menu");
 
-  // Fonction pour afficher les utilisateurs en fonction du mode d'affichage
+  // Fonction pour afficher les produits en fonction de la catégorie sélectionnée
   const render = () => {
-    if (mode === "grid") {
-      CardsList(productsList, products, ProductCard, ["name", "price"]);
-    } else if (mode === "table") {
-      DataTable(
-        productsList,
-        products,
-        ProductRow,
-        ["name", "price"],
-        ["Nom", "Prix", "Catégorie", "Marques"]
-      );
-    }
+    CardsList(
+      productsList,
+      filterProductsByCategory(products, selectedCategory),
+      ProductCard,
+      ["name"]
+    );
   };
 
-  // Met à jour le mode dans l'URL
-  const putModeInQueryString = () => {
+  // Met à jour la categorie dans l'URL
+  const putCategoryInQueryString = () => {
     const url = new URL(window.location.href);
-    url.searchParams.set("mode", mode);
+    // on reset la page de l'url
+    url.searchParams.delete("page");
+    url.searchParams.set("category", selectedCategory);
     window.history.pushState({}, "", url);
   };
 
-  // Met en surbrillance le mode d'affichage actif
-  const markActiveMode = () => {
-    if (mode === "grid") {
-      tableModeBtn.classList.remove("active");
-      gridModeBtn.classList.add("active");
-    } else if (mode === "table") {
-      gridModeBtn.classList.remove("active");
-      tableModeBtn.classList.add("active");
+  // Filtrer les produits par catégorie sélectionnée
+  const filterProductsByCategory = (products, category) => {
+    if (category === "all") {
+      return products;
     }
+    return products.filter((product) => product.category == category);
+  };
+
+  // Met en surbrillance la catégorie sélectionnée
+  const markActiveCategory = () => {
+    const buttons = categoriesMenu.querySelectorAll("button");
+    buttons.forEach((button) => {
+      if (button.dataset.category === selectedCategory) {
+        button.classList.remove("btn-secondary");
+        button.classList.add("btn-primary");
+      } else {
+        button.classList.remove("btn-primary");
+        button.classList.add("btn-secondary");
+      }
+    });
   };
 
   // Initialisation de la page
+  CategoriesMenu(categoriesMenu, categories, selectedCategory);
   render();
 
-  const gridModeBtn = document.querySelector("#grid-mode-btn");
-  const tableModeBtn = document.querySelector("#table-mode-btn");
-
-  markActiveMode();
-
-  // Ajout des écouteurs d'événements sur les boutons de mode d'affichage
-  gridModeBtn.addEventListener("click", () => {
-    mode = "grid";
-    markActiveMode();
-    putModeInQueryString();
-    render();
+  // Ajout des écouteurs d'événements pour les catégories
+  categoriesMenu.addEventListener("click", (event) => {
+    if (event.target.tagName === "BUTTON") {
+      selectedCategory = event.target.dataset.category;
+      putCategoryInQueryString();
+      markActiveCategory();
+      render();
+    }
   });
 
-  // Ajout des écouteurs d'événements sur les boutons de mode d'affichage
-  tableModeBtn.addEventListener("click", () => {
-    mode = "table";
-    markActiveMode();
-    putModeInQueryString();
-    render();
+  // Ajout d'un écouteur d'événement sur les boutons ajouter au panier
+  productsList.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      // prevent parent a tag event to be triggered
+      event.preventDefault();
+      console.dir(event.target.dataset.product);
+      AddToCart(event.target.dataset.product);
+      console.log("Ajouter au panier");
+    });
   });
 
   // Ajout d'un écouteur d'événement sur le bouton de retour arrière du navigateur
   window.addEventListener("popstate", () => {
     const url = new URL(window.location.href);
-    mode = url.searchParams.get("mode") || "grid";
+    selectedCategory = url.searchParams.get("category") || "all";
     render();
-    markActiveMode();
+    markActiveCategory();
   });
 };

@@ -1,27 +1,27 @@
 [
   {
     "id": 1,
-    "name": "Téléphonie",
-    "desc": "Téléphones et accessoires"
+    "name": "Animaux",
+    "desc": "Costumes représentant des animaux"
   },
   {
     "id": 2,
-    "name": "Audio",
-    "desc": "Enceintes, casques et haut-parleurs"
+    "name": "Aliments",
+    "desc": "Costumes inspirés par des aliments"
   },
   {
     "id": 3,
-    "name": "Electronique",
-    "desc": "Périphériques pour ordinateur et vidéo"
+    "name": "Personnages",
+    "desc": "Costumes de divers personnages"
   },
   {
     "id": 4,
-    "name": "photographie",
-    "desc": "Appareils photo et accessoires"
+    "name": "Objets",
+    "desc": "Costumes en forme d'objets divers"
   },
   {
     "id": 5,
-    "name": "Accessoires",
-    "desc": "Autres accessoires pour votre daily life"
+    "name": "Super-héros",
+    "desc": "Costumes de super-héros"
   }
 ]
