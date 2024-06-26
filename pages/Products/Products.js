@@ -3,7 +3,7 @@ import products from "../../data/products.json";
 import categories from "../../data/categories.json";
 import { ProductCard } from "./Partials/ProductCard";
 import { CategoriesMenu } from "./Partials/CategoriesMenu";
-import { AddToCart } from "../../utils/Cart";
+
 /**
  * Page de la liste des produits
  *
@@ -82,15 +82,15 @@ export const Products = (element) => {
     }
   });
 
-  // Ajout d'un écouteur d'événement sur les boutons ajouter au panier
-  productsList.querySelectorAll(".add-to-cart").forEach((button) => {
-    button.addEventListener("click", (event) => {
-      // on empêche le comportement par défaut du bouton
-      event.preventDefault();
-      AddToCart(event.target.dataset.product);
-      console.log("Ajouté au panier");
-    });
-  });
+  // // Ajout d'un écouteur d'événement sur les boutons ajouter au panier
+  // productsList.querySelectorAll(".add-to-cart").forEach((button) => {
+  //   button.addEventListener("click", (event) => {
+  //     // on empêche le comportement par défaut du bouton
+  //     event.preventDefault();
+  //     AddToCart(event.target.dataset.product);
+  //     console.log("Ajouté au panier");
+  //   });
+  // });
 
   // Ajout d'un écouteur d'événement sur le bouton de retour arrière du navigateur
   window.addEventListener("popstate", () => {

@@ -1,6 +1,7 @@
 import { ROUTE_CHANGED_EVENT } from "../framework/app";
 import { Pagination } from "./Pagination";
 import { TextInput } from "./TextInput";
+import { AddToCart } from "../utils/Cart";
 
 /**
  * Un composant pour afficher une liste de cartes paginée et filtrable.
@@ -30,7 +31,7 @@ export const CardsList = (element, items, itemTemplate, searchableFields) => {
         ${TextInput("search", searchInputValue, "search", "Rechercher...")}
       </div>
     </div>
-    <div id="${id}" class="row row-cols-2 row-cols-lg-3">
+    <div id="${id}" class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
     </div>
     <div id="pagination"></div>
     `;
@@ -134,6 +135,16 @@ export const CardsList = (element, items, itemTemplate, searchableFields) => {
     window.history.pushState({}, "", url);
     // On filtre et on pagine les items
     filterAndPaginate();
+  });
+
+  // Ajout d'un écouteur d'événement sur les boutons ajouter au panier
+  document.querySelectorAll("#products-list .add-to-cart").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      // on empêche le comportement par défaut du bouton
+      event.preventDefault();
+      AddToCart(event.target.dataset.product);
+      console.log("Ajouté au panier");
+    });
   });
 
   // On ajoute un écouteur d'événement sur le bouton précédent du navigateur
