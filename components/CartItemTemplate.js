@@ -18,7 +18,7 @@ export const CartItemTemplate = (item) => {
         <button class="btn btn-sm btn-danger delete-item" data-item-id="${
           item.id
         }">
-          X
+          <i class="bi bi-trash3"></i>
         </button>
       </td>
     </tr>

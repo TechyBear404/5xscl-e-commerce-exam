@@ -28,7 +28,9 @@ export const ProductCard = (product) => {
     <div class="col p-2 card product-card ">
       <a class=" text-decoration-none" href="/product?id=${product.id}">
         <div class="card-body">
-          <img src="${product.img}" class="card-img-top mb-2" alt="${product.name}">
+          <figure class="w-100 h-100">
+          <img src="${product.img}" class="card-img-top mb-2" alt="${product.name}" loading="lazy">
+          </figure>
           <h3 class="card-subtitle mb-1 text-muted fs-6">${category.name}</h3>
           <h2 class="card-title fs-4 text-black">${product.name}</h2>
           <p class="card-text">${product.price} €</p>
@@ -36,5 +38,6 @@ export const ProductCard = (product) => {
       </a>
       <button class="btn btn-primary add-to-cart" data-product="${product.id}">Ajouter au panier</button>
     </div>
+
     `;
 };

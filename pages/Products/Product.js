@@ -14,6 +14,7 @@ export const Product = (element) => {
   const productId = parseInt(url.searchParams.get("id"));
   // on récupère l'utilisateur correspondant à l'identifiant
   const product = products.find((product) => product.id === productId);
+  let qty = 1;
 
   // si l'utilisateur n'existe pas, on affiche un message d'erreur
   if (!product) {
@@ -25,22 +26,51 @@ export const Product = (element) => {
   }
 
   element.innerHTML = `
+  <div id="product" class="d-flex flex-column gap-1 relative overflow-y-auto overflow-x-hidden p-3 ">
     <img src="${product.img}" alt="${product.name}" class="w-100 h-auto">
     <div class="mt-3 d-flex align-items-lg-start justify-content-between">
       <div>
         <h1>${product.name}</h1>
-        <p>${product.price}</p>
+        <p>${product.desc}</p>
       </div>
-      <button class="btn btn-primary add-to-cart" data-product="${product.id}">Ajouter au panier</button>
+      <div class="d-flex flex-column align-items-end gap-2">
+        <h3>${product.price} €</h3>
+        <div class="d-flex gap-3 align-items-center">
+          <h4 className="">Qté</h4>
+          <div class="d-flex">
+            <button class="btn btn-sm btn-primary decrease-product-quantity" data-product="${product.id}">-</button>
+            <div class="px-2 bg-body-secondary product-qty">${qty}</div>
+            <button class="btn btn-sm btn-primary increase-product-quantity" data-product="${product.id}">+</button>
+          </div>
+          <button class="btn btn-primary add-to-cart" data-product="${product.id}">Ajouter au panier</button>
+        </div>
+      </div>
     </div>
+  </div>
     `;
+
+  const productQty = element.querySelector(".product-qty");
 
   element.querySelectorAll(".add-to-cart").forEach((button) => {
     button.addEventListener("click", (event) => {
-      // on empêche le comportement par défaut du bouton
       event.preventDefault();
-      AddToCart(event.target.dataset.product);
+      AddToCart(event.target.dataset.product, qty);
       console.log("Ajouté au panier");
+    });
+  });
+
+  document.querySelectorAll(".decrease-product-quantity").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      qty > 1 ? qty-- : qty;
+      productQty.textContent = qty;
+    });
+  });
+  document.querySelectorAll(".increase-product-quantity").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      qty++;
+      productQty.textContent = qty;
     });
   });
 };

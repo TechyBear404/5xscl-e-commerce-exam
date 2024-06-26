@@ -17,11 +17,10 @@ export const Products = (element) => {
   let selectedCategory = categoryFromQueryString || "all";
 
   element.innerHTML = `
-    <div class="d-flex justify-content-between">
-      <h1>Produits</h1>
-    </div>
-    <div id="categories-menu"></div>
-    <div id="products-list"></div>
+  <div class="d-flex gap-5 relative">
+    <div class="" id="categories-menu"></div>
+    <div id="products-list" class="overflow-y-auto overflow-x-hidden p-3"></div>
+  </div>
     `;
 
   const productsList = element.querySelector("#products-list");

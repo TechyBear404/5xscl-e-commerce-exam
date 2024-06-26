@@ -10,8 +10,7 @@
 export const CategoriesMenu = (element, categories, selectedCategory) => {
   element.innerHTML = `
   <div class="d-flex mb-2 gap-4 flex-wrap flex-md-nowrap">
-    <h4 class="">Catégories: </h4>
-    <div class="btn-group d-flex flex-wrap gap-1 justify-content-around w-100">
+    <div class="gap-1 justify-content-around d-flex flex-column">
       <!-- //add active class to selected category -->
       <button class="btn btn-sm  ${
         selectedCategory === "all" ? "btn-primary" : "btn-secondary"

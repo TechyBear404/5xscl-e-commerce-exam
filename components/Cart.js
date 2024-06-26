@@ -23,7 +23,7 @@ export const Cart = () => {
     >
       <table
         id="${id}"
-        class="table table-primary"
+        class="table "
       >
         <thead>
           <tr>
@@ -42,7 +42,7 @@ export const Cart = () => {
         <h3>Total: <span id="total-price">0</span>€</h3>
       </div>
       <div class="d-flex justify-content-between align-items-end p-2 gap-2">
-        <button id="clean-cart" class="btn btn-sm btn-danger">Vider le panier</button>
+        <button id="clean-cart" class="btn btn-sm btn-outline-danger">Vider le panier</button>
         <button id="validate-cart" class="btn btn-lg btn-success">Passer la commande</button>
       </div>
     </div>

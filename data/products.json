@@ -2,7 +2,7 @@
   {
     "id": 51,
     "name": "Angry Chicken",
-    "desc": "Costume de poulet en colère",
+    "desc": "Vous pensiez qu'un poulet ne pouvait pas être en colère ? Détrompez-vous et préparez-vous à effrayer tous les végétariens !",
     "price": 24.99,
     "category": 1,
     "brand": 1,
@@ -11,7 +11,7 @@
   {
     "id": 52,
     "name": "Bananator",
-    "desc": "Costume de banane",
+    "desc": "Envie de vous glisser dans la peau d'une banane géante ? Ce costume est fait pour vous. Sérieusement, pourquoi pas ?",
     "price": 27.99,
     "category": 2,
     "brand": 1,
@@ -20,7 +20,7 @@
   {
     "id": 53,
     "name": "Black Licorne",
-    "desc": "Costume de licorne noire",
+    "desc": "Parce que les licornes roses c'est tellement mainstream. Soyez unique, soyez une licorne noire.",
     "price": 31.99,
     "category": 1,
     "brand": 1,
@@ -29,7 +29,7 @@
   {
     "id": 54,
     "name": "Concombre Man",
-    "desc": "Costume de concombre",
+    "desc": "Pour ceux qui veulent vraiment se démarquer, rien de tel qu'un costume de concombre. Oui, un concombre.",
     "price": 29.49,
     "category": 2,
     "brand": 1,
@@ -38,7 +38,7 @@
   {
     "id": 55,
     "name": "Incontinantman",
-    "desc": "Costume d'homme incontinent",
+    "desc": "Parfait pour les soirées où vous voulez vraiment laisser une impression (et peut-être une flaque).",
     "price": 26.99,
     "category": 3,
     "brand": 1,
@@ -47,7 +47,7 @@
   {
     "id": 56,
     "name": "Mr. Tête de Patate",
-    "desc": "Costume de Mr. Tête de Patate",
+    "desc": "Revivez votre enfance avec ce costume de Mr. Tête de Patate, parce qu'être adulte c'est tellement surcoté.",
     "price": 32.99,
     "category": 4,
     "brand": 2,
@@ -56,7 +56,7 @@
   {
     "id": 57,
     "name": "Party Boy",
-    "desc": "Costume de garçon de fête",
+    "desc": "Soyez la définition vivante de 'la fête' avec ce costume. Attention, on n'a pas dit 'la classe'.",
     "price": 28.49,
     "category": 3,
     "brand": 2,
@@ -65,7 +65,7 @@
   {
     "id": 58,
     "name": "Recyclo",
-    "desc": "Costume de recyclage",
+    "desc": "Montrez votre amour pour la planète en vous déguisant en poubelle de recyclage. Oui, c'est une chose.",
     "price": 29.99,
     "category": 4,
     "brand": 2,
@@ -74,7 +74,7 @@
   {
     "id": 59,
     "name": "Sleeper",
-    "desc": "Costume de dormeur",
+    "desc": "Parfait pour ceux qui veulent participer à la fête mais qui préfèrent rester en mode sieste. Littéralement.",
     "price": 27.99,
     "category": 3,
     "brand": 2,
@@ -83,7 +83,7 @@
   {
     "id": 60,
     "name": "Super Gruyère",
-    "desc": "Costume de super gruyère",
+    "desc": "Devenez le super-héros du fromage avec ce costume de super gruyère. Parce que sauver le monde, c'est mieux avec des trous.",
     "price": 34.99,
     "category": 5,
     "brand": 3,
@@ -92,7 +92,7 @@
   {
     "id": 61,
     "name": "Fishy",
-    "desc": "Costume de poisson",
+    "desc": "Plongez dans l'humour avec ce costume de poisson. Idéal pour ceux qui aiment les blagues 'poisson' d'avril.",
     "price": 30.99,
     "category": 1,
     "brand": 3,
@@ -101,7 +101,7 @@
   {
     "id": 62,
     "name": "Miss Pizza",
-    "desc": "Costume de Miss Pizza",
+    "desc": "Déclarez votre amour inconditionnel pour la pizza avec ce costume. Parce qu'on sait tous que la pizza, c'est la vie.",
     "price": 28.99,
     "category": 2,
     "brand": 3,
@@ -110,7 +110,7 @@
   {
     "id": 63,
     "name": "Super Popcorn",
-    "desc": "Costume de super popcorn",
+    "desc": "Pour les cinéphiles qui veulent vraiment se démarquer, ce costume de super popcorn est tout simplement parfait.",
     "price": 33.99,
     "category": 5,
     "brand": 3,
@@ -119,7 +119,7 @@
   {
     "id": 64,
     "name": "Princess Pasteque",
-    "desc": "Costume de princesse pastèque",
+    "desc": "Transformez-vous en la royauté fruitée avec ce costume de princesse pastèque. Parce que pourquoi pas ?",
     "price": 31.49,
     "category": 2,
     "brand": 3,

@@ -9,15 +9,15 @@ export const UpdateCartBadge = (cart) => {
 };
 
 // Ajoute un produit au panier
-export const AddToCart = (id) => {
+export const AddToCart = (id, qty = 1) => {
   const product = products.find((product) => product.id == id);
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const item = cart.find((item) => item.id == id);
 
   if (item) {
-    item.quantity++;
+    item.quantity += qty;
   } else {
-    cart.push({ ...product, quantity: 1 });
+    cart.push({ ...product, quantity: qty });
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
