@@ -1,6 +1,6 @@
 import products from "../../data/products.json";
+import categories from "../../data/categories.json";
 import { AddToCart } from "../../utils/Cart";
-// import { RoleBadge } from "./Partials/RoleBadge";
 
 /**
  * Page des détails d'un produit
@@ -16,6 +16,10 @@ export const Product = (element) => {
   const product = products.find((product) => product.id === productId);
   let qty = 1;
 
+  const category = categories.find(
+    (category) => category.id === product.category
+  );
+
   // si l'utilisateur n'existe pas, on affiche un message d'erreur
   if (!product) {
     element.innerHTML = `
@@ -28,12 +32,13 @@ export const Product = (element) => {
   element.innerHTML = `
   <div id="product" class="d-flex flex-column gap-1 relative overflow-y-auto overflow-x-hidden p-3 ">
     <img src="${product.img}" alt="${product.name}" class="w-100 h-auto">
-    <div class="mt-3 d-flex align-items-lg-start justify-content-between">
-      <div>
+    <div class="mt-3 d-flex align-items-lg-center justify-content-between">
+      <div class="col-6">
         <h1>${product.name}</h1>
+        <h3 class="card-subtitle text-muted fs-6 mb-4">${category.name}</h3>
         <p>${product.desc}</p>
       </div>
-      <div class="d-flex flex-column align-items-end gap-2">
+      <div class="d-flex flex-column align-items-end gap-2 col-3">
         <h3>${product.price} €</h3>
         <div class="d-flex gap-3 align-items-center">
           <h4 className="">Qté</h4>
