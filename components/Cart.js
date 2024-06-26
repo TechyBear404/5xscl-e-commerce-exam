@@ -1,4 +1,3 @@
-// a component that displays the cart items and total price of the cart you can add and delete products from the cart, or clean the cart. the cart must be saved in the local storage
 import { CartItemTemplate } from "./CartItemTemplate.js";
 import { UpdateCart } from "../utils/Cart.js";
 
@@ -9,8 +8,9 @@ export const Cart = () => {
 
   const id = `cart-${Math.random().toString(36).slice(2)}`;
 
+  // On affiche le panier
   cartElem.innerHTML = `
-  <div class="d-flex flex-column justify-content-end bg-white rounded overflow-hidden border border-primary">
+  <div class="d-flex flex-column justify-content-end bg-white rounded overflow-hidden border border-primary min-w-500px">
     <div
       class="table-responsive"
     >
@@ -30,11 +30,13 @@ export const Cart = () => {
         <tbody>
         </tbody>
       </table>
-      <div class="d-flex justify-content-end">
+      ${cart.length === 0 ? "<p class='p-2'>Le panier est vide</p>" : ""}
+      <div class="d-flex justify-content-end pe-2">
         <h3>Total: <span id="total-price">0</span>€</h3>
       </div>
-      <div class="d-flex justify-content-end">
-        <button id="clean-cart" class="btn btn-danger">Vider le panier</button>
+      <div class="d-flex justify-content-between align-items-end p-2 gap-2">
+        <button id="clean-cart" class="btn btn-sm btn-danger">Vider le panier</button>
+        <button id="validate-cart" class="btn btn-lg btn-success">Passer la commande</button>
       </div>
     </div>
   </div>
@@ -43,44 +45,57 @@ export const Cart = () => {
   const listElement = cartElem.querySelector(`#${id} tbody`);
   const totalPriceElement = cartElem.querySelector("#total-price");
   const cleanCartButton = cartElem.querySelector("#clean-cart");
+  const validateCartButton = cartElem.querySelector("#validate-cart");
 
+  // Fonction pour mettre à jour le panier
   const updateCart = () => {
     totalPrice = 0;
     listElement.innerHTML = `
       ${cart.map(CartItemTemplate).join("")}
     `;
-
     cart.forEach((item) => {
       totalPrice += item.price * item.quantity;
     });
-
     totalPriceElement.textContent = totalPrice.toFixed(2);
   };
 
   updateCart();
 
+  // On vide le panier
   cleanCartButton.addEventListener("click", () => {
     cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCart();
   });
 
+  // On valide le panier
+  validateCartButton.addEventListener("click", () => {
+    cart = [];
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCart();
+  });
+
+  // On ajoute les écouteurs d'événements pour les boutons d'ajout de quantité
   const increaseQuantityButtons =
     listElement.querySelectorAll(".increase-quantity");
-  const decreaseQuantityButtons =
-    listElement.querySelectorAll(".decrease-quantity");
 
   increaseQuantityButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       UpdateCart(event.target.dataset.itemId, "increase");
     });
   });
+
+  // On ajoute les écouteurs d'événements pour les boutons de diminution de quantité
+  const decreaseQuantityButtons =
+    listElement.querySelectorAll(".decrease-quantity");
+
   decreaseQuantityButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       UpdateCart(event.target.dataset.itemId, "decrease");
     });
   });
 
+  // On ajoute les écouteurs d'événements pour les boutons de suppression d'item
   listElement.addEventListener("click", (event) => {
     if (event.target.classList.contains("delete-item")) {
       const index = cart.findIndex(

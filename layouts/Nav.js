@@ -12,7 +12,7 @@ import { Cart } from "../components/Cart";
  * @returns {void}
  */
 export const Nav = (element) => {
-  const appName = "E-commerce";
+  const appName = "OddHeroes";
 
   /**
    * @type {Link[]}

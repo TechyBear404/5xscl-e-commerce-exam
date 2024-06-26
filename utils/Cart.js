@@ -1,6 +1,7 @@
 import products from "../data/products.json";
 import { Cart } from "../components/Cart";
 
+// Ajoute un produit au panier
 export const AddToCart = (id) => {
   const product = products.find((product) => product.id == id);
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -16,6 +17,7 @@ export const AddToCart = (id) => {
   Cart(cart);
 };
 
+// Met à jour un produit du panier
 export const UpdateCart = (id, action) => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const item = cart.find((item) => item.id == id);
