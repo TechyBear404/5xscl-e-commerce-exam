@@ -69,3 +69,15 @@ export const EmptyCart = () => {
   UpdateCartBadge([]);
   showToast("Le panier a été vidé", "success");
 };
+
+export const ValidateCart = () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  if (cart.length === 0) {
+    showToast("Le panier est vide", "danger");
+    return;
+  }
+  localStorage.removeItem("cart");
+  Cart([]);
+  UpdateCartBadge([]);
+  showToast("Le panier a été validé! Merci de votre commande", "success");
+};

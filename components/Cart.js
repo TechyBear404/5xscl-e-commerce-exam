@@ -4,6 +4,7 @@ import {
   DeleteProduct,
   EmptyCart,
   UpdateCartBadge,
+  ValidateCart,
 } from "../utils/Cart.js";
 
 export const Cart = () => {
@@ -79,7 +80,7 @@ export const Cart = () => {
 
   // On valide le panier
   validateCartButton.addEventListener("click", () => {
-    EmptyCart();
+    ValidateCart();
   });
 
   // On ajoute les écouteurs d'événements pour les boutons d'ajout de quantité
